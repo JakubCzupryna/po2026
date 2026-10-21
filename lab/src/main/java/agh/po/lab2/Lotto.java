@@ -7,9 +7,12 @@ public class Lotto {
     public static void main(String[] args) {
         Random x = new Random();
         ArrayList<Integer> lista = new ArrayList<>();
-        for (int i=0; i<=5; i++) {
+
+        while (lista.size() <5) {
             int l = x.nextInt(1,49);
-            lista.add(l);
+
+            if (!lista.contains(l)) {
+                lista.add(l); }
         }
         System.out.println(lista);
 
