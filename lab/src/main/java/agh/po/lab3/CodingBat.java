@@ -1,5 +1,8 @@
 package agh.po.lab3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CodingBat {
     public static void main(String[] args) {
         CodingBat cb = new CodingBat();
@@ -9,6 +12,9 @@ public class CodingBat {
         System.out.println(cb.makes10(2, 3));
         System.out.println(cb.in3050(31,40));
         System.out.println(cb.max1020(8,12));
+        System.out.println(cb.mapAB3(new java.util.HashMap<>(java.util.Map.of("a", "aaa", "c", "cake"))));
+        String[] test1 = {"a", "b", "a", "c", "b"};
+        System.out.println("Test 1: " + cb.wordMultiple(test1));
     }
     public boolean startHi(String str) {
         if (str.length() < 2) {
@@ -48,4 +54,28 @@ public class CodingBat {
         if (b >= 10 && b <= 20) return b;
         return 0;
     }
+
+    public Map<String, String> mapAB3(Map<String, String> map) {
+        if (map.containsKey("a") && !map.containsKey("b")) {
+            map.put("b", map.get("a"));
+        }
+        else if (map.containsKey("b") && !map.containsKey("a")) {
+            map.put("a", map.get("b"));
+        }
+        return map;
+    }
+    public Map<String, Boolean> wordMultiple(String[] strings) {
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+
+        for (String s : strings) {
+            if (map.containsKey(s)) {
+                map.put(s, true);
+            } else {
+                map.put(s, false);
+            }
+        }
+
+        return map;
+    }
+
 }

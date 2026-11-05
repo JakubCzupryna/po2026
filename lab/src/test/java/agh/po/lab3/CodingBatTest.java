@@ -20,4 +20,14 @@ public class CodingBatTest {
     public void max1020() {
         assertEquals(true, cb.max1020(8,12));
     }
-}
+
+    @org.junit.Test
+    public void mapAB3() {
+        java.util.Map<String, String> input = new java.util.HashMap<>();
+        input.put("a", "aaa");
+        input.put("c", "cake");
+
+        // Wywołujemy assertEquals, porównując oczekiwaną mapę z wynikiem metody
+        assertEquals(java.util.Map.of("a", "aaa", "b", "aaa", "c", "cake"), cb.mapAB3(input));
+    }
+    }
