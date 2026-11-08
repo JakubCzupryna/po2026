@@ -30,4 +30,10 @@ public class CodingBatTest {
         // Wywołujemy assertEquals, porównując oczekiwaną mapę z wynikiem metody
         assertEquals(java.util.Map.of("a", "aaa", "b", "aaa", "c", "cake"), cb.mapAB3(input));
     }
+    @org.junit.Test
+    public void wordMultiple() {
+        String[] input = {"a", "b", "a", "c", "b"};
+
+        assertEquals(java.util.Map.of("a", true, "b", true, "c", false), cb.wordMultiple(input));
+    }
     }
